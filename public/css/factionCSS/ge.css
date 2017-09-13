@@ -1,0 +1,23 @@
+body{
+  background-image: url(../../images/e6acf43e6d6ade6bf5b3e74614752663.png);
+}
+
+.CirlceGIPC{
+  background-image: url(../../images/main-qimg-2c78e41a1738217b07f75f2b33905714.png);
+  background-size: cover;
+  height: 50px; width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  background-position: -11px;
+}
+
+.buFlag{
+  background-image: url(../../images/main-qimg-ecf012eca0496bceb2238996406f22e4.png);
+  background-size: 100% 100%;
+  width: 60px;
+  height: 34px;
+  position: absolute;
+  right: 29px;
+}

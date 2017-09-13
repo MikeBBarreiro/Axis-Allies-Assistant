@@ -1,0 +1,23 @@
+body{
+  background-image: url(../../images/soviets.png);
+}
+
+.CirlceGIPC{
+  background-image: url(../../images/soviets.png);
+  background-size: cover;
+  height: 50px; width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  background-position: -11px;
+}
+
+.buFlag{
+  background-image: url(../../images/soviets.png);
+  background-size: 100% 100%;
+  width: 60px;
+  height: 34px;
+  position: absolute;
+  right: 29px;
+}

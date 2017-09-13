@@ -1,0 +1,22 @@
+body{
+  background-image: url(../../images/Naval_ensign_of_the_Empire_of_Japan.svg.png);
+}
+
+.CirlceGIPC{
+  background-image: url(../../images/Naval_ensign_of_the_Empire_of_Japan.svg.png);
+  background-size: 100% 100%;
+  height: 50px; width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+}
+
+.buFlag{
+  background-image: url(../../images/Naval_ensign_of_the_Empire_of_Japan.svg.png);
+  background-size: 100% 100%;
+  width: 60px;
+  height: 34px;
+  position: absolute;
+  right: 29px;
+}

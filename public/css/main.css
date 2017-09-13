@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body
+{
+    /*cursor: url('../images/cursorCustom.png'), pointer; */
+    background-color: #1A1B23;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bgOverlay{
+  background-color: RGBA(26, 27, 35, 0.9);
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
+h1,h2,h3,h4,h5{
+}
+.sa-error-container > p{
+  color: black !important;
+}
+.sweet-alert h2,.sweet-alert p{
+  color: white;
+}
+.sweet-alert .sa-icon.sa-success::before, .sweet-alert .sa-icon.sa-success::after,.sweet-alert .sa-icon.sa-success .sa-fix{
+  background: rgba(0, 0, 0, 0);
+}
+canvas
+{
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    position: absolute;
+}
+
+#chatPane {
+  /*border: inset 2px;*/
+  border: none;
+  /*height: 100px;*/
+  width: 100%;
+  max-height:380px;
+  /*width: 130%;*/
+  overflow: auto;
+  padding: 5px;
+  margin-bottom: 5px;
+  color: white;
+}
+#outgoing{width: 100%;font-family: 'Lato', sans-serif;color:white;}
+
+#createLobby > p,#joinLobby > p,.noLobby > p{
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+#createLobby,#joinLobby,.noLobby{
+  text-align: center;
+  padding: 10px;
+  border: 1px solid white;
+  margin: 2px;
+}
+
+.CustomeDisableBtn{color:RGBA(26, 27, 35, 1.00);}
+
+#submitSend{
+  width: 100%;
+  background-color: RGBA(24, 113, 181, 1.00);
+  color: white;
+  border: RGBA(26, 27, 35, 1.00);
+  border-radius: 2px;
+  font-family: 'Lato', sans-serif;
+}
+
+#outgoing{
+  background-color: RGBA(26, 27, 35, 0.6);
+  border: 1px solid;
+  margin: 5px 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#russianFactionPlayBtn:hover{
+  cursor: pointer;
+}
+#germanFactionPlayBtn:hover{
+  cursor: pointer;
+}
+#britishFactionPlayBtn:hover{
+  cursor: pointer;
+}
+#JapaneseFactionPlayBtn:hover{
+  cursor: pointer;
+}
+#americanFactionPlayBtn:hover {
+  cursor: pointer;
+}
+
+#russianFactionPlayBtn{
+  background-color: RGBA(210, 53, 70, 1.00);
+  margin: 0 auto;
+  /*display: block;*/
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+  border-radius: 5px;
+  bottom: 212px; border: 1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation-delay: 0.9s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+}
+#germanFactionPlayBtn{
+  background-color: RGBA(26, 27, 35, 1.00);
+  margin: 0 auto;
+  /*display: block;*/
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+  border-radius: 5px;
+  bottom: 212px; border: 1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation-delay: 0.9s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+}
+#britishFactionPlayBtn{
+  background-color: #facb7a;
+  margin: 0 auto;
+  /*display: block;*/
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+  border-radius: 5px;
+  bottom: 212px; border: 1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation-delay: 0.9s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+}
+#JapaneseFactionPlayBtn{
+  background-color: RGBA(223, 148, 65, 1.00);
+  margin: 0 auto;
+  /*display: block;*/
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+  border-radius: 5px;
+  bottom: 212px; border: 1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation-delay: 0.9s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+}
+#americanFactionPlayBtn{
+  background-color: RGBA(39, 58, 119, 1.00);
+  margin: 0 auto;
+  /*display: block;*/
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+  border-radius: 5px;
+  bottom: 212px; border: 1px solid black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-animation-delay: 0.9s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+}
+
+.image-map-wrapper > img {
+	width:100%;
+	height:auto;
+}
+.btn-sideNav{
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-sideNav:hover{cursor: pointer; background-color: RGBA(26, 27, 35, 1.00)}
+
+.btnCog{
+  position: absolute;
+  top: 40%;
+  left: 0;
+  border: 1px solid white;
+  z-index: 999;
+  height: 40px;
+  width: 30px;
+  border-top-right-radius: 90px;
+  border-bottom-right-radius: 90px;
+  text-align: center;
+  line-height: 36px;
+  border-left: black;
+  z-index: 1;
+  color: white;
+}
+.btnCog:hover{cursor: pointer;}
+
+.sideNav{
+  height: 100%;
+  width: 200px;
+  /*border: red;*/
+  background-color: RGBA(26, 27, 35, 0.9);
+  position: absolute;
+  z-index: 999;
+}
+.sideNav > div:nth-child(1) {padding: 10px; text-align: center; border-bottom: 1px solid white; margin-top: 10px;}
+.sideNav > div > h1{margin:0;font-family: 'Lato', sans-serif;color:white;}
+
+.StartView{
+  width: 100%;
+  /*height: 100vh;*/
+  /*height: 100%;*/
+  background-size: cover;
+}
+.bg{
+  position: absolute;
+  min-height: 100% !important;
+  width: 100%;
+  z-index: 0;
+}
+.interactiveBG{
+  /*background: url(https://images.alphacoders.com/827/827904.jpg) center center / cover no-repeat;*/
+    width: 1265px;
+    height: 290px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transition: transform 100ms linear;
+
+}
+.ibg-bg{
+  position: absolute;
+  /*background-size: 100% 100% !important;*/
+  width: 100% !important;
+}
+.StartWar{
+  margin: auto;
+  display: block;
+  /*width: 50%;*/
+  margin-top: 20px;
+}
+/*MEDIA QUIRIES*/
+#AAMAP41.laptopMap{max-width: 100%;}
+@media screen and (max-width: 1440px) {
+    /*#AAMAP41.laptopMap{
+      width: 1010px;
+      height: 547px;
+      /*max-width: 100%;*/
+      /*margin: auto;*/
+    }*/
+
+}
+@media screen and (max-width: 414px) {
+  #Yankee{width: 100% !important;}
+}
+
+.laptopMap{
+  margin: auto;
+  background-repeat: no-repeat;
+}
+
+.leftPanel{
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-left: 10px;
+  padding-top: 15px;
+  /*background-color: RGBA(251, 252, 255, 0.2);*/
+}
+
+.saCustomClass{
+  background-color: RGBA(0, 0, 0, 0.86);
+}
+
+.CurrentTerfHoveredContainer{
+  width: 100%;
+  color: white;
+  text-align:center;
+}
+
+/*Unit Hover Icon's*/
+.infantryImg{height: 50px;width: 40px;position: absolute;left: 12%;}
+#InfantryBuy:hover img.infantryImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.tankImg{height: 45px;width: 75px;position: absolute;left: 6%;}
+#TankBuy:hover img.tankImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.fighterImg{height: 35px;width: 75px;position: absolute;left: 6%;top:15px;}
+#FighterBuy:hover img.fighterImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.bomberImg{height: 35px;width: 75px;position: absolute;left: 6%;top:15px;}
+#BomberBuy:hover img.bomberImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.transportImg{height: 25px;width: 75px;position: absolute;left: 4%;top:17px;}
+#TransportBuy:hover img.transportImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.subImg{width: 68px;position: absolute;left: 4%;top:26px;}
+#SubmarineBuy:hover img.subImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.destroyerImg{width: 68px;position: absolute;left: 4%;top:26px;}
+#DestroyerBuy:hover img.destroyerImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.acImg{width: 50px;position: absolute;left: 4%;}
+#AircraftCarrierBuy:hover img.acImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.bsImg{width: 70px;position: absolute;left: 4%;top:16px;}
+#BattleshipBuy:hover img.bsImg{
+  opacity: 1 !important;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/*Unit Hover Icon's END*/
+#InfantryBuy:hover,#TankBuy:hover,#FighterBuy:hover,#BomberBuy:hover,#TransportBuy:hover,#SubmarineBuy:hover,#DestroyerBuy:hover,#AircraftCarrierBuy:hover,#BattleshipBuy:hover{
+  border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#InfantryBuy > p,#TankBuy > p,#FighterBuy > p,#BomberBuy > p,#TransportBuy > p,#SubmarineBuy > p,#DestroyerBuy > p,#AircraftCarrierBuy > p,#BattleshipBuy > p{
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+#InfantryBuy,#TankBuy,#FighterBuy,#BomberBuy,#TransportBuy,#SubmarineBuy,#DestroyerBuy,#AircraftCarrierBuy,#BattleshipBuy{
+  text-align: center;
+  padding: 10px;
+  border: 1px solid white;
+  margin: 2px;
+}
+#predictedAmnt{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  height: 50px;
+  border: 1px solid white;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#sumofunits{
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#unitValuePrint{
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 0;
+}
+
+.cancelEnlistmentBtn{
+  width: 100%;
+  border: 1px solid white;
+  padding: 8px 0 8px 0;
+  font-size: 20px;
+  height: 50px;
+  text-align:center;
+}
+.clearEnlistment:hover{cursor: pointer;}
+.clearEnlistment{
+  position: absolute;
+  left: 16px;
+}
+
+.close > span {
+  font-size: 30px;
+  color: white;
+}
+
+.enlistBtn{
+  width: 100%;
+  border: 1px solid white;
+  padding: 8px 0 8px 0;
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  background-image: url(./../images/military-hill.png);
+  /*background-color: rgba(255, 255, 255, 0.51);*/
+  background-size: 100% 160%;
+  background-position: 0px -28px;
+}
+.enlistBtn > p {
+  opacity: 0;
+  font-size: 20px;
+  padding: 0px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 50px;
+  padding: 10px 0 0 0;
+}
+.bu > p{
+  margin-top: 8px;
+}
+.bu:hover{
+  cursor: pointer;
+}
+.bu{
+  width: 100%;
+  border: 1px solid white;
+  height: 60px;
+  color: white;
+  background-color: #1A1B23;
+  padding: 12px;
+  display: inline-flex;
+}
+.enlistBtn:hover .enlistBtnP{
+  /*background-color: rgba(255, 255, 255, 0.51);*/
+  background-color: white;
+  /*display:block;*/
+  opacity: 1;
+  color: black;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all  0.5s ease-in-out;
+  -o-transition: all  0.5s ease-in-out;
+  transition: all  0.5s ease-in-out;
+}
+#endTurnBtn:hover{cursor: pointer;}
+#endTurnBtn{
+  width: 100%;
+  border: 1px solid black;
+  padding: 12px;
+  height: 60px;
+  background-color: #D23546;
+  border-radius: 6px;
+  border-radius: 6px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+
+/* Shrink */
+.hvr-shrink {
+  cursor: pointer;
+  /*display: inline-block;*/
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+@media screen and (max-width: 2560px){
+  .StartWar{
+    width: 100%;
+    height: 400px;
+  }
+}
+/*large laptop */
+@media screen and (max-width: 1440px) and (min-width: 990px){
+  .StartWar{
+    width: 100%;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 770px){
+  .StartWar{
+    width: 50%;
+    height: 200px;
+  }
+}
+
+/*Iphone6+ - Iphone 5*/
+@media screen and (max-width: 414px) and (min-width: 320px){
+  .StartWar{
+    width: 100%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 414px) {
+  #Yankee{width: 100% !important;}
+}
+.joinLobbyInpContainer{
+      width: 100%;
+}
+
+#Ivan{
+  background-image: url(../images/soviets.png);
+  background-size: 100% 100%;
+}
+#Ivan > p{
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#Krouts{
+  background-image: url(../images/main-qimg-2c78e41a1738217b07f75f2b33905714.png);
+  background-size: cover;
+}
+#Krouts > p{
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#Brits{
+  background-image: url(../images/United_Kingdom.svg.png);
+  background-size: 100% 100%;
+}
+#Brits > p{
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#Jap{
+  background-image: url(../images/Naval_ensign_of_the_Empire_of_Japan.svg.png);
+  background-size: 100% 100%;
+}
+#Jap > p{
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#Yankee{
+  background-image: url(../images/murica.png);
+  background-size: 100% 100%;
+}
+#Yankee > p{
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Lato', sans-serif;
+}
