@@ -1,77 +1,50 @@
 
 $(function() {
   $(".f1").click(function(){
-    setTimeout(function(){
-      $('#russianFactionPlayBtn').css('display', 'block');
-    }, 1000);
+    $('#russianFactionPlayBtn').css('display', 'block');
+    $('#russianFactionPlayBtn').addClass('animated fadeInUp');
+    setTimeout(function(){}, 500);
     $('#germanFactionPlayBtn').css('display', 'none');
     $('#britishFactionPlayBtn').css('display', 'none');
     $('#JapaneseFactionPlayBtn').css('display', 'none');
     $('#americanFactionPlayBtn').css('display', 'none');
-    // $('#russianFactionPlayBtn').css('opacity', '1');
-    // $('#germanFactionPlayBtn').css('opacity', '0');
-    // $('#britishFactionPlayBtn').css('opacity', '0');
-    // $('#JapaneseFactionPlayBtn').css('opacity', '0');
-    // $('#americanFactionPlayBtn').css('opacity', '0');
-    // setTimeout(function(){
-    //   $('#germanFactionPlayBtn').css('display', 'none');
-    //   $('#britishFactionPlayBtn').css('display', 'none');
-    //   $('#JapaneseFactionPlayBtn').css('display', 'none');
-    //   $('#americanFactionPlayBtn').css('display', 'noen');
-    // }, 1000);
   });
   $(".f2").click(function(){
-    setTimeout(function(){
-      $('#germanFactionPlayBtn').css('display', 'block');
-    }, 1000);
+    $('#germanFactionPlayBtn').css('display', 'block');
+    $('#germanFactionPlayBtn').addClass('animated fadeInUp');
+    setTimeout(function(){}, 500);
     $('#russianFactionPlayBtn').css('display', 'none');
     $('#britishFactionPlayBtn').css('display', 'none');
     $('#JapaneseFactionPlayBtn').css('display', 'none');
     $('#americanFactionPlayBtn').css('display', 'none');
-    // $('#russianFactionPlayBtn').css('opacity', '0');
-    // $('#germanFactionPlayBtn').css('opacity', '1');
-    // $('#britishFactionPlayBtn').css('opacity', '0');
-    // $('#JapaneseFactionPlayBtn').css('opacity', '0');
-    // $('#americanFactionPlayBtn').css('opacity', '0');
-    // setTimeout(function(){
-    //   $('#russianFactionPlayBtn').css('display', 'none');
-    //   $('#britishFactionPlayBtn').css('display', 'none');
-    //   $('#JapaneseFactionPlayBtn').css('display', 'none');
-    //   $('#americanFactionPlayBtn').css('display', 'noen');
-    // }, 1000);
   });
   $(".f3").click(function(){
-    setTimeout(function(){
-      $('#britishFactionPlayBtn').css('display', 'block');
-    }, 1000);
+    $('#britishFactionPlayBtn').css('display', 'block');
+    $('#britishFactionPlayBtn').addClass('animated fadeInUp');
+    setTimeout(function(){}, 1000);
     $('#germanFactionPlayBtn').css('display', 'none');
     $('#russianFactionPlayBtn').css('display', 'none');
     $('#JapaneseFactionPlayBtn').css('display', 'none');
     $('#americanFactionPlayBtn').css('display', 'none');
   });
   $(".f4").click(function(){
-    setTimeout(function(){
-      $('#JapaneseFactionPlayBtn').css('display', 'block');
-    }, 1000);
+    $('#JapaneseFactionPlayBtn').css('display', 'block');
+    $('#JapaneseFactionPlayBtn').addClass('animated fadeInUp');
+    setTimeout(function(){}, 1000);
     $('#germanFactionPlayBtn').css('display', 'none');
     $('#russianFactionPlayBtn').css('display', 'none');
     $('#britishFactionPlayBtn').css('display', 'none');
     $('#americanFactionPlayBtn').css('display', 'none');
   });
   $(".f5").click(function(){
-    setTimeout(function(){
-      $('#americanFactionPlayBtn').css('display', 'block');
-    }, 1000);
+    $('#americanFactionPlayBtn').css('display', 'block');
+    $('#americanFactionPlayBtn').addClass('animated fadeInUp');
+    setTimeout(function(){}, 1000);
     $('#germanFactionPlayBtn').css('display', 'none');
     $('#russianFactionPlayBtn').css('display', 'none');
     $('#britishFactionPlayBtn').css('display', 'none');
     $('#JapaneseFactionPlayBtn').css('display', 'none');
   });
-  // $('#russianFactionPlayBtn').click(function(){})
-  // $('#germanFactionPlayBtn').click(function(){})
-  // $('#britishFactionPlayBtn').click(function(){})
-  // $('#JapaneseFactionPlayBtn').click(function(){})
-  // $('#americanFactionPlayBtn').click(function(){})
 
   $(".StartView").interactive_bg({
     strength: 25,              // Movement Strength when the cursor is moved. The higher, the faster it will reacts to your cursor. The default value is 25.

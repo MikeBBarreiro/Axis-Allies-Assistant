@@ -561,6 +561,31 @@ canvas
     width: 100%;
     height: 200px;
   }
+  #russianFactionPlayBtn{
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
+  #germanFactionPlayBtn{
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
+  #britishFactionPlayBtn{
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
+  #JapaneseFactionPlayBtn{
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
+  #americanFactionPlayBtn{
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 414px) {
   #Yankee{width: 100% !important;}
