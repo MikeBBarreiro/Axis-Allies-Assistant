@@ -95,16 +95,16 @@ canvas
 }
 
 #russianFactionPlayBtn{
-  background-color: RGBA(210, 53, 70, 1.00);
+  background-color: RGBA(26, 27, 35, 0.4);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: black;
+  color: RGBA(210, 53, 70, 1.00);;
   border-radius: 5px;
-  bottom: 212px; border: 1px solid black;
+  bottom: 212px; border: 1px solid RGBA(210, 53, 70, 1.00);;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -116,16 +116,16 @@ canvas
   top:0;
 }
 #germanFactionPlayBtn{
-  background-color: RGBA(26, 27, 35, 1.00);
+  background-color:  RGBA(26, 27, 35, 0.4);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: black;
+  color: white;
   border-radius: 5px;
-  bottom: 212px; border: 1px solid black;
+  bottom: 212px; border: 1px solid white;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -137,16 +137,16 @@ canvas
   top:0;
 }
 #britishFactionPlayBtn{
-  background-color: #facb7a;
+  background-color:  RGBA(26, 27, 35, 0.4);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: black;
+  color: #facb7a;
   border-radius: 5px;
-  bottom: 212px; border: 1px solid black;
+  bottom: 212px; border: 1px solid #facb7a;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -158,16 +158,16 @@ canvas
   top:0;
 }
 #JapaneseFactionPlayBtn{
-  background-color: RGBA(223, 148, 65, 1.00);
+  background-color:  RGBA(26, 27, 35, 0.4);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: black;
+  color: RGBA(223, 148, 65, 1.00);
   border-radius: 5px;
-  bottom: 212px; border: 1px solid black;
+  bottom: 212px; border: 1px solid RGBA(223, 148, 65, 1.00);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -179,16 +179,16 @@ canvas
   top:0;
 }
 #americanFactionPlayBtn{
-  background-color: RGBA(39, 58, 119, 1.00);
+  background-color: RGBA(26, 27, 35, 0.4);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: black;
+  color: RGBA(39, 58, 119, 1.00);
   border-radius: 5px;
-  bottom: 212px; border: 1px solid black;
+  bottom: 212px; border: 1px solid RGBA(39, 58, 119, 1.00);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -586,12 +586,27 @@ canvas
     height: 50px;
     font-size: 17px;
   }
+  .statsOfFaction{
+    top:inherit !important;
+    bottom: 34% !important;
+  }
 }
 @media screen and (max-width: 414px) {
   #Yankee{width: 100% !important;}
 }
 .joinLobbyInpContainer{
       width: 100%;
+}
+
+.statsOfFaction{
+  background-color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+  top: 8%;
 }
 
 #Ivan{
