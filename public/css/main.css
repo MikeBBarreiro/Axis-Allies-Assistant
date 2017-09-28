@@ -9,6 +9,21 @@ body
     background-size: cover;
     background-repeat: no-repeat;
 }
+#home:hover{cursor: pointer;}
+.feedbckBtn{
+  right: 4%;
+  position: relative;
+  margin: 20px 0 0 0;
+  border: 1px solid white;
+  padding: 5px 10px 5px 10px;
+  line-height: 24px;
+  height: 40px;
+  border-radius: 100px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  float: right;
+}
+.feedbckBtn:hover{cursor: pointer;}
 .bgOverlay{
   background-color: RGBA(26, 27, 35, 0.9);
   z-index: 0;
@@ -212,7 +227,7 @@ canvas
   font-family: 'Lato', sans-serif;
 }
 
-.btn-sideNav:hover{cursor: pointer; background-color: RGBA(26, 27, 35, 1.00)}
+.btn-sideNav:hover{cursor: pointer; background-color: RGBA(26, 27, 35, 1.00);text-decoration: none;}
 
 .btnCog{
   position: absolute;
@@ -287,6 +302,24 @@ canvas
 }
 @media screen and (max-width: 414px) {
   #Yankee{width: 100% !important;}
+}
+@media screen and (max-width: 800px) {
+  .feedbckBtnA{bottom: 15%;width:100%;right: 0% !important;}
+  .feedbckBtn{
+    right: 0;
+    position: relative;
+    margin: 20px 0 0 0;
+    border: 1px solid white;
+    padding: 5px 10px 5px 10px;
+    line-height: 24px;
+    height: 40px;
+     border-radius: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+   float: none !important;
+    left: 0;
+    text-align: center;
+  }
 }
 
 .laptopMap{

@@ -1,5 +1,9 @@
 
 $(function() {
+
+  $('.btnCog').click(function(){$('.sideNav').css('display','block');})
+  $('.btnCog_close').click(function(){$('.sideNav').css('display','none');})
+
   $(".f1").click(function(){
     $('#russianFactionPlayBtn').css('display', 'block');
     $('#russianFactionPlayBtn').addClass('animated fadeInUp');
