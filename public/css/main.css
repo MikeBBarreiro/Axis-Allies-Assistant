@@ -9,6 +9,7 @@ body
     background-size: cover;
     background-repeat: no-repeat;
 }
+.ContainerUK > .laptopMap {width: 95.5% !important;}
 #home:hover{cursor: pointer;}
 .feedbckBtn{
   right: 4%;
@@ -325,6 +326,7 @@ canvas
 .laptopMap{
   margin: auto;
   background-repeat: no-repeat;
+  /* width: 100% !important; /*FOR MAP*/ */
 }
 
 .leftPanel{

@@ -1,3 +1,7 @@
+$(document).ready(function(e) {
+    // $('img[usemap]').rwdImageMaps();
+    $('img[usemap]').imageMap();
+});
 $(function() {
     $('#AAMAP41').maphilight();
     $("#myModal1").modal();
