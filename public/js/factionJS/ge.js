@@ -1,23 +1,47 @@
+var mapParent;
+
 $(function() {
-    $('#AAMAP41').maphilight();
-    $("#myModal1").modal();
+  var x = window.matchMedia("(max-width: 375px)")
 
-    $('#Brits').click(function(){
-      var britishSelected = true;
-      var germanySelected = false;
-      var russiaSelected = false;
-      var japsSelected = false;
-      var usSelected = false;
-      // $('.ContainerUK').css('display', '');
-    });
+  if (x.matches) { // If media query matches
+    $('#phonexMobileMap').removeClass('hidden');
+    $('.mapxs').removeClass('hidden');
+    $('#AAactualMap').addClass('hidden');
+    $('#AAMAP41').addClass('hidden')
+    $('.mapxs').maphilight();
+    mapParent = '#phonexMobileMap'
+    // setTimeout(function(){}, 500);
+  } else {
+    // $('.map41LT').load('templates/map41Laptop.html', function () {
+    //   // Things to do when the html is loaded
+      $('#AAMAP41').maphilight();
+      $("#myModal1").modal();
+      mapParent = '#AAactualMap'
+    // });
+    // $('#phonexMobileMap').removeClass('hidden');
+    // $('#mapxs').removeClass('hidden');
+    // $('#AAactualMap').addClass('hidden');
+    // $('#AAMAP41').addClass('hidden')
+  }
+  // $('#AAMAP41').maphilight();
+  // $("#myModal1").modal();
 
-    $('.btnCog').click(function(){$('.sideNav').css('display','block');})
-    $('.btnCog_close').click(function(){$('.sideNav').css('display','none');})
+  $('#Brits').click(function(){
+    var britishSelected = true;
+    var germanySelected = false;
+    var russiaSelected = false;
+    var japsSelected = false;
+    var usSelected = false;
+    // $('.ContainerUK').css('display', '');
+  });
+
+  $('.btnCog').click(function(){$('.sideNav').css('display','block');})
+  $('.btnCog_close').click(function(){$('.sideNav').css('display','none');})
 
 
-    $("area").hover(function(){
-      $('#CurrentTerfHovered').html($('#' + this.id)[0].alt);
-    });
+  $("area").hover(function(){
+    $('#CurrentTerfHovered').html($('#' + this.id)[0].alt);
+  });
 });
 
 var globalIPC = 12
@@ -64,7 +88,7 @@ $('area').click(function(e){
           data.fillOpacity = '0.4';
        //ata.alwaysOn = !data.alwaysOn;
        // This sets the new data, and finally checks for areas with alwaysOn set
-        $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+        $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
         earningsSub -= Number($('#' + selectedTerf.id).attr('value'))
 
@@ -82,7 +106,7 @@ $('area').click(function(e){
         $('#GlobalIPCCount').html(globalIPC);
         $('#CurrentIPCCount').html("Current IPC's: " + currentIPC);
 
-        $('#' + selectedTerf.id).removeClass('cap');
+        $(mapParent + ' > #' + selectedTerf.id).removeClass('cap');
       }
     });
   }else{
@@ -110,7 +134,7 @@ $('area').click(function(e){
               data.fillOpacity = '0.4';
            //ata.alwaysOn = !data.alwaysOn;
            // This sets the new data, and finally checks for areas with alwaysOn set
-            $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
             earningsSub -= Number($('#' + selectedTerf.id).attr('value'));
 
@@ -130,7 +154,7 @@ $('area').click(function(e){
             }else{
               $('#GlobalIPCCount').html(globalIPC);
             }
-            $('#' + selectedTerf.id).removeClass('cap');
+            $(mapParent + ' > #' + selectedTerf.id).removeClass('cap');
           }
 
         });
@@ -152,7 +176,7 @@ $('area').click(function(e){
       if (isConfirm) {
         e.preventDefault();
         if(selectedTerf.id === 'Germany'){
-          $('#' + selectedTerf.id).addClass('cap');
+          $(mapParent + ' > #' + selectedTerf.id).addClass('cap');
 
           swal({
             title: "Good job!",
@@ -166,7 +190,7 @@ $('area').click(function(e){
           //   $(this).addClass('cap');
           //   globalIPC += Number($(this).attr('value'));
           // });
-          $(".German").each(function(){
+          $(mapParent + " > .German").each(function(){
             // var americanIPCsCap = Number($(this).attr('value'));
             if($(this).hasClass('cap')){
               globalIPC += Number($(this).attr('value'));
@@ -326,7 +350,7 @@ $('area').click(function(e){
             // timer: 6000,
             customClass: 'saCustomClass'
           });
-          $(".Japan.cap").each(function(){
+          $(mapParent " > .Japan.cap").each(function(){
             var russianIPCsCap = Number($(this).attr('value'));
             globalIPC = globalIPC - russianIPCsCap;
             $('#GlobalIPCCount').html(globalIPC);
@@ -335,8 +359,8 @@ $('area').click(function(e){
             data.strokeColor = '454346';
             data.fillOpacity = '0.4';
 
-            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
-            $(this).removeClass('cap');
+            $(mapParent + ' > ' + this).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(mapParent + ' > ' + this).removeClass('cap');
           });
           return
         }else{
@@ -349,13 +373,13 @@ $('area').click(function(e){
             customClass: 'saCustomClass'
           });
         }
-        var data = $('#' + selectedTerf.id).data('maphilight') || {};
+        var data = $(mapParent + '> #' + selectedTerf.id).data('maphilight') || {};
           data.fillColor = '1A1B23'; // Sample color
           data.strokeColor = '020100';
           data.fillOpacity = '0.7';
         //  data.alwaysOn = !data.alwaysOn;
         // This sets the new data, and finally checks for areas with alwaysOn set
-        $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+        $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
         earningsCount += Number($('#' + selectedTerf.id).attr('value'))
 
@@ -377,7 +401,7 @@ $('area').click(function(e){
             $('#GlobalIPCCount').html(globalIPC);
           }
         }
-        $('#' + selectedTerf.id).addClass('cap');
+        $(mapParent + ' > #' + selectedTerf.id).addClass('cap');
       } else {
         // swal("Captured!", "You've captured the territory!", "success");
         // earnings = 8;
