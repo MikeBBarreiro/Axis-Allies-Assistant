@@ -1,7 +1,10 @@
 var mapParent;
 
 $(function() {
-  var x = window.matchMedia("(max-width: 375px)")
+  // var x = window.matchMedia("(max-width: 375px)");
+  var x = window.matchMedia("(max-width: 575px)"); //<-- Iphone12 size height is 2532px.
+  // var h = window.matchMedia("(max-height: 2532px)") //Iphone12 redolution
+// this code needs to change.
 
   if (x.matches) { // If media query matches
     $('#phonexMobileMap').removeClass('hidden');
@@ -350,7 +353,7 @@ $('area').click(function(e){
             // timer: 6000,
             customClass: 'saCustomClass'
           });
-          $(mapParent " > .Japan.cap").each(function(){
+          $(mapParent + " > .Japan.cap").each(function(){
             var russianIPCsCap = Number($(this).attr('value'));
             globalIPC = globalIPC - russianIPCsCap;
             $('#GlobalIPCCount').html(globalIPC);
