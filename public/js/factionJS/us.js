@@ -4,7 +4,7 @@ $(function() {
     // $('#AAMAP41').rwdImageMaps();
     // $('#AAMAP41').imageMapResize();
     // $("#myModal1").modal();
-    var x = window.matchMedia("(max-width: 375px)")
+    var x = window.matchMedia("(max-width: 575px)")
 
     if (x.matches) { // If media query matches
       $('#phonexMobileMap').removeClass('hidden');
@@ -267,7 +267,7 @@ $('area').click(function(e){
 
           });
 
-          $(".cap").each(function(){
+          $(mapParent + " > .cap").each(function(){
             if(this.className !== 'American cap'){
               var value = $('#' + this.id).attr('value');
 
@@ -380,8 +380,8 @@ $('area').click(function(e){
             data.strokeColor = '454346';
             data.fillOpacity = '0.4';
 
-            $(mapParent + ' > ' + this).data('maphilight', data).trigger('alwaysOn.maphilight');
-            $(mapParent + ' > ' + this).removeClass('cap');
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(this).removeClass('cap');
           });
           return
         }else if(selectedTerf.id === 'UK'){
@@ -401,8 +401,8 @@ $('area').click(function(e){
             data.strokeColor = '454346';
             data.fillOpacity = '0.4';
 
-            $(mapParent + ' > ' + this).data('maphilight', data).trigger('alwaysOn.maphilight');
-            $(mapParent + ' > ' + this).removeClass('cap');
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(this).removeClass('cap');
           });
           return
         }else{

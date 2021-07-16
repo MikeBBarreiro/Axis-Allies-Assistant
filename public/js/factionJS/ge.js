@@ -211,7 +211,7 @@ $('area').click(function(e){
 
           });
 
-          $(".cap").each(function(){
+          $(mapParent + " > .cap").each(function(){
             if(this.className !== 'German cap'){
               var value = $('#' + this.id).attr('value');
 
@@ -362,8 +362,8 @@ $('area').click(function(e){
             data.strokeColor = '454346';
             data.fillOpacity = '0.4';
 
-            $(mapParent + ' > ' + this).data('maphilight', data).trigger('alwaysOn.maphilight');
-            $(mapParent + ' > ' + this).removeClass('cap');
+            $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(this).removeClass('cap');
           });
           return
         }else{
