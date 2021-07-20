@@ -29,17 +29,36 @@ $(function() {
   // $('#AAMAP41').maphilight();
   // $("#myModal1").modal();
 
-  $('#Brits').click(function(){
-    var britishSelected = true;
-    var germanySelected = false;
-    var russiaSelected = false;
-    var japsSelected = false;
-    var usSelected = false;
-    // $('.ContainerUK').css('display', '');
-  });
-
   $('.btnCog').click(function(){$('.sideNav').css('display','block');})
   $('.btnCog_close').click(function(){$('.sideNav').css('display','none');})
+
+  $('area').mouseenter(function () {
+      orgin = $('#' + this.id).data('maphilight');
+      var data = $('#' + this.id).data('maphilight') || {};
+      data.strokeColor = '1A1B23';
+      data.shadow = true,
+      data.shadowX = 0,
+      data.shadowY = 0,
+      data.shadowRadius = 40,
+      data.shadowColor = '000000',
+      data.shadowOpacity = 1,
+      data.shadowPosition ='outside'
+      $('#' + this.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+  });
+  $('area').mouseleave(function () {
+    if($('#' + this.id).hasClass('cap')){
+      orgin.strokeColor = '000000';
+    }else{
+      orgin.strokeColor = '454346';
+    }
+    orgin.shadow = false,
+    orgin.shadowX = orgin.shadowX,
+    orgin.shadowY = orgin.shadowY,
+    orgin.shadowRadius = orgin.shadowRadius,
+    orgin.shadowColor = orgin.shadowColor,
+    orgin.shadowOpacity = orgin.shadowOpacity,
+    $('#' + this.id).data('maphilight', orgin).trigger('alwaysOn.maphilight');
+  });
 
 
   $("area").hover(function(){

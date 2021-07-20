@@ -1,23 +1,54 @@
 $(function() {
-    $('#AAMAP41').maphilight();
-    $("#myModal1").modal();
+  var x = window.matchMedia("(max-width: 630px)")
 
-    $('#Brits').click(function(){
-      var britishSelected = true;
-      var germanySelected = false;
-      var russiaSelected = false;
-      var japsSelected = false;
-      var usSelected = false;
-      // $('.ContainerUK').css('display', '');
-    });
+  if (x.matches) { // If media query matches
+    $('#phonexMobileMap').removeClass('hidden');
+    $('.mapxs').removeClass('hidden');
+    $('#AAactualMap').addClass('hidden');
+    $('#AAMAP41').addClass('hidden')
+    $('.mapxs').maphilight();
+    mapParent = '#phonexMobileMap'
+  } else {
+      $('#AAMAP41').maphilight();
+      $("#myModal1").modal();
+      mapParent = '#AAactualMap'
+  }
 
-    $('.btnCog').click(function(){$('.sideNav').css('display','block');})
-    $('.btnCog_close').click(function(){$('.sideNav').css('display','none');})
+  $('.btnCog').click(function(){$('.sideNav').css('display','block');})
+  $('.btnCog_close').click(function(){$('.sideNav').css('display','none');});
+
+  $('area').mouseenter(function () {
+      orgin = $('#' + this.id).data('maphilight');
+      var data = $('#' + this.id).data('maphilight') || {};
+      data.strokeColor = 'FFF39B';
+      data.shadow = true,
+      data.shadowX = 0,
+      data.shadowY = 0,
+      data.shadowRadius = 40,
+      data.shadowColor = '000000',
+      data.shadowOpacity = 1,
+      data.shadowPosition ='outside'
+      $('#' + this.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+  });
+  $('area').mouseleave(function () {
+    if($('#' + this.id).hasClass('cap')){
+      orgin.strokeColor = '000000';
+    }else{
+      orgin.strokeColor = '454346';
+    }
+    orgin.shadow = false,
+    orgin.shadowX = orgin.shadowX,
+    orgin.shadowY = orgin.shadowY,
+    orgin.shadowRadius = orgin.shadowRadius,
+    orgin.shadowColor = orgin.shadowColor,
+    orgin.shadowOpacity = orgin.shadowOpacity,
+    $('#' + this.id).data('maphilight', orgin).trigger('alwaysOn.maphilight');
+  });
 
 
-    $("area").hover(function(){
-      $('#CurrentTerfHovered').html($('#' + this.id)[0].alt);
-    });
+  $("area").hover(function(){
+    $('#CurrentTerfHovered').html($('#' + this.id)[0].alt);
+  });
 });
 
 var globalIPC = 12;
@@ -58,13 +89,13 @@ $('area').click(function(e){
       if (isConfirm) {
         // swal("Blast!", "Bolster the defences!");
         e.preventDefault();
-        var data = $('#' + selectedTerf.id).data('maphilight') || {};
+        var data = $(mapParent + ' > #' + selectedTerf.id).data('maphilight') || {};
           data.fillColor = '89878B';
           data.strokeColor = '454346';
           data.fillOpacity = '0.4';
        //ata.alwaysOn = !data.alwaysOn;
        // This sets the new data, and finally checks for areas with alwaysOn set
-        $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+        $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
         earningsSub -= Number($('#' + selectedTerf.id).attr('value'))
 
@@ -73,7 +104,7 @@ $('area').click(function(e){
           // earningsSub = 0
         }
 
-        earnings = $('#' + selectedTerf.id).attr('value');
+        earnings = $(mapParent + ' > #' + selectedTerf.id).attr('value');
         globalIPC = globalIPC - Number(earnings);
 
         globalIPC = 0;
@@ -81,7 +112,7 @@ $('area').click(function(e){
 
         $('#GlobalIPCCount').html(globalIPC);
         $('#CurrentIPCCount').html("Current IPC's: " + currentIPC);
-        $('#' + selectedTerf.id).removeClass('cap');
+        $(mapParent + ' > #' + selectedTerf.id).removeClass('cap');
       }
     });
   }else{
@@ -103,15 +134,15 @@ $('area').click(function(e){
           if (isConfirm) {
             // swal("Blast!", "Bolster the defences!");
             e.preventDefault();
-            var data = $('#' + selectedTerf.id).data('maphilight') || {};
+            var data = $(mapParent + ' > #' + selectedTerf.id).data('maphilight') || {};
               data.fillColor = '89878B';
               data.strokeColor = '454346';
               data.fillOpacity = '0.4';
            //ata.alwaysOn = !data.alwaysOn;
            // This sets the new data, and finally checks for areas with alwaysOn set
-            $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+            $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
-            earningsSub -= Number($('#' + selectedTerf.id).attr('value'));
+            earningsSub -= Number($(mapParent + ' > #' + selectedTerf.id).attr('value'));
 
             if(earningsSub < 0){
               if(globalIPC <= 0){
@@ -122,14 +153,14 @@ $('area').click(function(e){
               // earningsSub = 0
             }
 
-            earnings = $('#' + selectedTerf.id).attr('value');
+            earnings = $(mapParent + ' > #' + selectedTerf.id).attr('value');
             globalIPC = globalIPC - Number(earnings);
             if(globalIPC <= 0){
               $('#GlobalIPCCount').html(0);
             }else{
               $('#GlobalIPCCount').html(globalIPC);
             }
-            $('#' + selectedTerf.id).removeClass('cap');
+            $(mapParent + ' > #' + selectedTerf.id).removeClass('cap');
 
           }
 
@@ -152,7 +183,7 @@ $('area').click(function(e){
       if (isConfirm) {
         e.preventDefault();
         if(selectedTerf.id === 'UK'){
-          $('#' + selectedTerf.id).addClass('cap');
+          $(mapParent + ' > #' + selectedTerf.id).addClass('cap');
 
           swal({
             title: "Good job!",
@@ -166,7 +197,7 @@ $('area').click(function(e){
           //   $(this).addClass('cap');
           //   globalIPC += Number($(this).attr('value'));
           // });
-          $(".uk").each(function(){
+          $(mapParent + " > .uk").each(function(){
             // var americanIPCsCap = Number($(this).attr('value'));
             if($(this).hasClass('cap')){
               globalIPC += Number($(this).attr('value'));
@@ -184,7 +215,7 @@ $('area').click(function(e){
 
           });
 
-          $(".cap").each(function(){
+          $(mapParent + " > .cap").each(function(){
             if(this.className !== 'uk cap'){
               var value = $('#' + this.id).attr('value');
 
@@ -288,7 +319,7 @@ $('area').click(function(e){
             // timer: 6000,
             customClass: 'saCustomClass'
           });
-          $(".Russian.cap").each(function(){
+          $(mapParent + " > .Russian.cap").each(function(){
             var russianIPCsCap = Number($(this).attr('value'));
             globalIPC = globalIPC - russianIPCsCap;
             $('#GlobalIPCCount').html(globalIPC);
@@ -309,7 +340,7 @@ $('area').click(function(e){
             // timer: 6000,
             customClass: 'saCustomClass'
           });
-          $(".American.cap").each(function(){
+          $(mapParent + " > .American.cap").each(function(){
             var russianIPCsCap = Number($(this).attr('value'));
             globalIPC = globalIPC - russianIPCsCap;
             $('#GlobalIPCCount').html(globalIPC);
@@ -332,22 +363,22 @@ $('area').click(function(e){
             customClass: 'saCustomClass'
           });
         }
-        var data = $('#' + selectedTerf.id).data('maphilight') || {};
+        var data = $(mapParent + ' > #' + selectedTerf.id).data('maphilight') || {};
           data.fillColor = 'FFF39B'; // Sample color
           data.strokeColor = '020100';
           data.fillOpacity = '0.6';
         //  data.alwaysOn = !data.alwaysOn;
         // This sets the new data, and finally checks for areas with alwaysOn set
-        $('#' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
+        $(mapParent + ' > #' + selectedTerf.id).data('maphilight', data).trigger('alwaysOn.maphilight');
 
-        earningsCount += Number($('#' + selectedTerf.id).attr('value'))
+        earningsCount += Number($(mapParent + ' > #' + selectedTerf.id).attr('value'))
 
         if(earningsCount > 0){
           $('#earningsCount').html("You've earned " + Math.abs(earningsCount) + " IPC's");
           // earningsCount = 0
         }
 
-        earnings = $('#' + selectedTerf.id).attr('value');
+        earnings = $(mapParent + ' > #' + selectedTerf.id).attr('value');
         globalIPC = globalIPC + Number(earnings);
 
         if(globalIPC <= 0){
@@ -360,7 +391,7 @@ $('area').click(function(e){
             $('#GlobalIPCCount').html(globalIPC);
           }
         }
-        $('#' + selectedTerf.id).addClass('cap');
+        $(mapParent + ' > #' + selectedTerf.id).addClass('cap');
       } else {
         // swal("Captured!", "You've captured the territory!", "success");
         // earnings = 8;

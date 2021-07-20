@@ -108,16 +108,18 @@ canvas
 #americanFactionPlayBtn:hover {
   cursor: pointer;
 }
-
+.slide > a {
+  transform: translateY(0px);
+}
 #russianFactionPlayBtn{
-  background-color: RGBA(26, 27, 35, 0.4);
+  background-color: RGBA(210, 53, 70, 1.00);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: RGBA(210, 53, 70, 1.00);;
+  color: white;
   border-radius: 5px;
   bottom: 212px; border: 1px solid RGBA(210, 53, 70, 1.00);;
   -webkit-transition: all 0.5s ease-in-out;
@@ -131,7 +133,7 @@ canvas
   top:0;
 }
 #germanFactionPlayBtn{
-  background-color:  RGBA(26, 27, 35, 0.4);
+  background-color:  RGBA(26, 27, 35, 1.00);
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
@@ -173,14 +175,15 @@ canvas
   top:0;
 }
 #JapaneseFactionPlayBtn{
-  background-color:  RGBA(26, 27, 35, 0.4);
+  background-color:  RGBA(223, 148, 65, 1.00);
+  /* background-color:  RGBA(26, 27, 35, 0.4); */
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: RGBA(223, 148, 65, 1.00);
+  color: white;
   border-radius: 5px;
   bottom: 212px; border: 1px solid RGBA(223, 148, 65, 1.00);
   -webkit-transition: all 0.5s ease-in-out;
@@ -194,14 +197,14 @@ canvas
   top:0;
 }
 #americanFactionPlayBtn{
-  background-color: RGBA(26, 27, 35, 0.4);
+  background-color: #273A77;
   margin: 0 auto;
   /*display: block;*/
   height: 40px;
   width: 200px;
   padding: 10px;
   font-size: 12px;
-  color: RGBA(39, 58, 119, 1.00);
+  color: white;
   border-radius: 5px;
   bottom: 212px; border: 1px solid RGBA(39, 58, 119, 1.00);
   -webkit-transition: all 0.5s ease-in-out;
@@ -297,13 +300,18 @@ canvas
       height: 547px;
       /*max-width: 100%;*/
       /*margin: auto;*/
-    }*/
+    }
 
 }
 @media screen and (max-width: 414px) {
   #Yankee{width: 100% !important;}
 }
 @media screen and (max-width: 800px) {
+  body{
+    background-size: 100% !important;
+    background-repeat: repeat !important;
+  }
+  .btnCog{top:6% !important;}
   .feedbckBtnA{bottom: 15%;width:100%;right: 0% !important;}
   .feedbckBtn{
     right: 0;
@@ -594,30 +602,43 @@ canvas
     width: 100%;
     height: 200px;
   }
-  #russianFactionPlayBtn{
+  /* #russianFactionPlayBtn{
     width: 100%;
     height: 50px;
     font-size: 17px;
+    transform: translateY(0px);
+    margin-top: 50%;
   }
   #germanFactionPlayBtn{
     width: 100%;
     height: 50px;
     font-size: 17px;
+    transform: translateY(0px);
+    margin-top: 50%;
   }
   #britishFactionPlayBtn{
     width: 100%;
     height: 50px;
     font-size: 17px;
+    transform: translateY(0px);
+    margin-top: 50%;
   }
   #JapaneseFactionPlayBtn{
     width: 100%;
     height: 50px;
     font-size: 17px;
-  }
-  #americanFactionPlayBtn{
+    transform: translateY(0px);
+    margin-top: 50%;
+  } */
+  #americanFactionPlayBtn,
+  #JapaneseFactionPlayBtn,
+  #britishFactionPlayBtn,
+  #germanFactionPlayBtn,
+  #russianFactionPlayBtn{
     width: 100%;
     height: 50px;
     font-size: 17px;
+    margin-top: 50%;
   }
   .statsOfFaction{
     top:inherit !important;
