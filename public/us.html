@@ -23,6 +23,11 @@
 </head>
 <body>
 <div class="bgOverlay"></div>
+<div style="height: 100vh; width: 100%;  overflow: hidden; position: absolute;">
+  <img id="c1" src="https://i.pinimg.com/originals/60/a8/2c/60a82c6cf7fda046b291e6b2c78ea531.png" style="z-index: 9999; position: absolute; top: 0; right: -15%; transform: rotate(90deg);"/>
+  <img id="c2" src="https://i.pinimg.com/originals/60/a8/2c/60a82c6cf7fda046b291e6b2c78ea531.png" style="z-index: 9999; position: absolute; top: 0; left: -15%; transform: rotate(-90deg);"/>
+</div>
+
   <!-- Side Settings Nav -->
   <div class="sideNav" style="display: none;">
     <div style="text-align: center;">
@@ -49,7 +54,11 @@
 
         <h4 id="earningsCount" style="font-size: 14px;"></h4>
         <h4 id="earningsSub" style="font-size: 14px;"></h4>
+        <!-- <div id="myDIV" onscroll="myFunction()">
+          <div id="content">Scroll inside me!</div>
+        </div>
 
+        <p id="demo"></p> -->
       </div>
       <!--Contains the incoming chat messages-->
       <!-- <div id="chatPane"></div> -->
@@ -66,11 +75,14 @@
     <div class="col-lg-10">
       <!-- <div class="image-map-wrapper us-map"></div> -->
       <!-- <h4 style="font-family: 'Lato', sans-serif; text-align: center;">United Kingdom</h4> -->
-      <div class="ContainerUK animated slideInRight" >
-        <img id="AAMAP41" class="laptopMap" src="images/AAMAP41-1010.19x539.73.png" usemap="#image-map">
+      <div class="ContainerUK" >
+        <!-- <img class="rightArrow shown" src="https://upload.wikimedia.org/wikipedia/commons/2/24/Arrow-right-512.png" />
+        <img class="leftArrow hidden" src="https://upload.wikimedia.org/wikipedia/commons/2/24/Arrow-right-512.png" /> -->
+
+        <img id="AAMAP41" class="laptopMap hidden" src="images/AAMAP41-1010.19x539.73.png" usemap="#image-map">
         <img class="mapxs hidden" src="images/564x304-map.png" usemap="#image-map-mobile">
 
-        <map id="AAactualMap" name="image-map">
+        <map id="AAactualMap" class="hidden" name="image-map">
           <!--This code WAS used in the UK area for custome highlighting: onmouseover='myHover(this);' onmouseout='myLeave();' -->
           <area id="UK" class="uk " value="3"t arget="" alt="United Kingdom" title="United Kingdom" coords="221,96,221,89,229,84,237,84,233,90,240,95,239,102,234,110,240,117,242,126,243,136,250,140,247,154,248,162,242,163,232,162,224,165,210,166,206,162,217,150,215,145,221,137,218,135,223,130,224,122,219,118,220,110,214,125,206,121,209,113,216,107" shape="poly"
             data-maphilight='{"strokeColor":"454346","strokeWidth":2,"fillColor":"89878B","fillOpacity":0.4, "alwaysOn": true}'>
@@ -383,7 +395,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content saCustomClass" style="color: white;">
       <div class="modal-header">
@@ -541,7 +553,17 @@
     </div>
   </div>
 </div> -->
-
+<!-- Notes: animated zoomOut class, is used to call a class from animate.css -->
+<script>
+function myFunction() {
+  var elmnt = document.getElementById("myDIV");
+  var x = elmnt.scrollLeft;
+  var y = elmnt.scrollTop;
+  // console.log(x)
+  // console.log(y)
+  document.getElementById ("demo").innerHTML = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
+}
+</script>
 <script src="lib/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="lib/toastr.js" type="text/javascript"></script>
 <script src="lib/bootstrap.js" type="text/javascript"></script>

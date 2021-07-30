@@ -1,4 +1,6 @@
+
 $(function() {
+
     // responsiveImageMap('#AAactualMap',1010);
     // $('#AAMAP41').maphilight();
     // $('#AAMAP41').rwdImageMaps();
@@ -10,14 +12,16 @@ $(function() {
     if (x.matches) { // If media query matches
       $('#phonexMobileMap').removeClass('hidden');
       $('.mapxs').removeClass('hidden');
-      $('#AAactualMap').addClass('hidden');
-      $('#AAMAP41').addClass('hidden')
+      // $('#AAactualMap').addClass('hidden');
+      // $('#AAMAP41').addClass('hidden')
       $('.mapxs').maphilight();
       mapParent = '#phonexMobileMap'
     } else {
-        $('#AAMAP41').maphilight();
-        $("#myModal1").modal();
-        mapParent = '#AAactualMap'
+      $('#AAactualMap').removeClass('hidden');
+      $('#AAMAP41').removeClass('hidden');
+      $('#AAMAP41').maphilight();
+      $("#myModal1").modal();
+      mapParent = '#AAactualMap'
     }
 
     $('.btnCog').click(function(){$('.sideNav').css('display','block');})
@@ -56,6 +60,9 @@ $(function() {
     $("area").hover(function(){
       $('#CurrentTerfHovered').html($('#' + this.id)[0].alt);
     });
+
+    $('#c1').animate({right: "100%"}, 3000);
+    $('#c2').animate({left: "100%"}, 3000);
 
   //   var ImageMap = function (map, img) {
   //         var n,
